@@ -5,11 +5,9 @@ while True:
     ret, frame = cam.read()
     width = cam.get(3)
     height = cam.get(4)
-    print(height,width)
-    frameResize = cv2.resize(frame, (int(width*2),int(height/2)))
-    frameGray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    frameHSV = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    
     frameBlur = cv2.GaussianBlur(frameGray,(5,5),0)
+    frameHSV = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     frameCanny = cv2.Canny(frame, 100, 300)
     cv2.imshow("Webcam", frame)
     cv2.imshow("Webcam Gaussian Blur", frameBlur)
