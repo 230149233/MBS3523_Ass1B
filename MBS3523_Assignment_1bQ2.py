@@ -4,8 +4,8 @@ cam = cv2.VideoCapture(0)
 
 while True:
     ret, frame = cam.read()
-    width = cam.get(3) # column
-    height = cam.get(4) # Row
+    width = cam.get(3)
+    height = cam.get(4)
     print(height,width)
     frameResize = cv2.resize(frame, (int(width*2),int(height/2)))
     frameGray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
